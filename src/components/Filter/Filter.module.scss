@@ -1,0 +1,32 @@
+.Filter {
+  display: flex;
+  justify-content: center;
+}
+.FilterInput {
+  display: block;
+  margin: 0 auto;
+  // min-width: 50vw;
+  // width: calc(180px + 2vmin);
+  width: 80vw;
+  min-height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: medium;
+
+  @media screen and (min-width: 420px) {
+    // width: calc(320px + 2vmin);
+    width: 70vw;
+    height: 25px;
+  }
+  @media screen and (min-width: 768px) {
+    // width: calc(520px + 3vmin);
+    width: 60vw;
+    margin-bottom: 10px;
+    height: 30px;
+  }
+}
+.FilterLabel {
+  font-size: small;
+  //   text-transform: capitalize;
+}

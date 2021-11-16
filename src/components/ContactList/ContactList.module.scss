@@ -1,0 +1,41 @@
+.contactList {
+  min-width: 240px;
+  font-size: calc(10px + 0.5vmin);
+
+  @media screen and( min-width:480px) {
+    // width: 320px;
+    font-size: calc(12px + 0.5vmin);
+  }
+  @media screen and( min-width:768px) {
+    width: 620px;
+    font-size: calc(13px + 0.5vmin);
+    padding-left: 20px;
+    border-left: 2px solid #455a64;
+  }
+}
+
+td {
+  // border: 1px solid blue;
+  text-align: left;
+  // table-layout: fixed;
+}
+.contactBtn {
+  text-align: right;
+
+  & .btn {
+    // padding: 2px 10px;
+    font-size: calc(14px + 1vmin);
+    border: none;
+    background: white;
+    cursor: pointer;
+    color: #455a64;
+    // color: #282c34;
+
+    @media screen and(min-width: 420px) {
+      padding-left: 30px;
+    }
+    @media screen and(min-width: 1124px) {
+      padding-left: 0;
+    }
+  }
+}
