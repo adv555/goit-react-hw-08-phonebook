@@ -1,19 +1,18 @@
 import { NavLink } from 'react-router-dom';
 // import { AppBar, Button, Container, IconButton, Toolbar, Typography } from '@mui/material';
 import 'styles/shared.scss';
-import s from 'components/AppBar/AuthNav/AuthNav.module.scss';
 
 const AutoNav = () => (
-  <div className={s.authBox}>
+  <div className="navBox">
     <NavLink
-      className={s.link}
+      className="navLink"
       to="/login"
       style={({ isActive }) => ({ color: isActive ? 'yellow' : 'grey' })}
     >
       Login
     </NavLink>
     <NavLink
-      className={s.link}
+      className="navLink"
       to="/register"
       style={({ isActive }) => ({ color: isActive ? 'yellow' : 'grey' })}
     >

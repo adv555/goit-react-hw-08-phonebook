@@ -26,6 +26,8 @@
     height: 20px;
     min-width: calc(170px + 2vmin);
     cursor: pointer;
+
+    outline-color: #607d8b;
   }
   // & input:not(:first-child) {
   //   margin-top: 10px;

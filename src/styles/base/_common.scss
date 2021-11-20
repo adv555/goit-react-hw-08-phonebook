@@ -1,6 +1,8 @@
 body {
   font-family: $main-font;
   letter-spacing: 0.03em;
+  margin: 0;
+  // background-color: $bg-color;
 }
 
 h1,
@@ -35,3 +37,7 @@ img {
 .list {
   list-style: none;
 }
+
+// input {
+//   outline-color: $accent-color-2;
+// }

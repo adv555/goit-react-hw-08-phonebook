@@ -3,18 +3,17 @@ import { useSelector } from 'react-redux';
 import UserMenu from 'components/AppBar/UserMenu';
 import AutoNav from 'components/AppBar/AuthNav';
 import { getIsLoggedIn } from 'redux/auth/selectors';
-import s from 'components/AppBar/Navigation/Navigation.module.scss';
 
 import 'styles/shared.scss';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
-    <header className={s.header}>
-      <nav className={`container ${s.nav}`}>
-        <div className={s.authBox}>
+    <header className="header">
+      <nav className="container nav">
+        <div className="navBox">
           <NavLink
-            className={s.link}
+            className="navLink"
             to="/"
             style={({ isActive }) => ({ color: isActive ? 'yellow' : 'grey' })}
           >
@@ -22,7 +21,7 @@ const Navigation = () => {
           </NavLink>
           {isLoggedIn && (
             <NavLink
-              className={s.link}
+              className="navLink"
               to="/contacts"
               style={({ isActive }) => ({ color: isActive ? 'yellow' : 'grey' })}
             >
