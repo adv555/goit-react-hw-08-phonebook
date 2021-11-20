@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
 import s from 'components/ContactForm/ContactForm.module.scss';
-import { addContact } from 'redux/operations';
-import { isLoading } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { isLoading } from 'redux/contacts/selectors';
 
 export default function Form() {
   const dispatch = useDispatch();

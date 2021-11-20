@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
-import s from 'components/Header/Header.module.scss';
-function Header({ title, children }) {
+
+import s from 'components/Hero/Hero.module.scss';
+function Hero({ title, children }) {
   return (
-    <header className={s.AppHeader}>
+    <section className={s.AppHeader}>
       <div className="container">
         <h1>{title}</h1>
         {children}
       </div>
-    </header>
+    </section>
   );
 }
 
-Header.propTypes = {
+Hero.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node,
 };
 
-export default Header;
+export default Hero;

@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  height: 40px;
+
+  border: 1px solid white;
+  background-color: transparent;
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   color: #fff;
+}
+.authBox {
+  display: flex;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}

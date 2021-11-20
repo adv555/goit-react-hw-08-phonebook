@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { isLoading } from 'redux/selectors';
+import { isLoading } from 'redux/contacts/selectors';
 import s from 'components/Section/Section.module.scss';
 
 function Section({ title, children }) {

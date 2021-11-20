@@ -2,7 +2,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
-import { changeFilter } from 'redux/actions';
+import { changeFilter } from 'redux/contacts/actions';
 
 function getNewContact(state, { payload }) {
   const existContact = state.some(({ name }) => name === payload.name);
