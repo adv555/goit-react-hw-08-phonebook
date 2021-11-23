@@ -7,11 +7,30 @@ import Section from 'components/Section/Section';
 const styles = {
   form: {
     width: 320,
+    color: '#b4a5a5',
   },
   label: {
     display: 'flex',
     flexDirection: 'column',
     marginBottom: 15,
+  },
+  input: {
+    outline: 'none',
+    fontSize: '14px',
+    padding: '8px',
+    color: '#c5d8dd',
+    borderRadius: '3px',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+  },
+  button: {
+    marginTop: '20px',
+    padding: '10px',
+    width: '50%',
+    color: '#b4a5a5',
+    borderRadius: '3px',
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
   },
 };
 
@@ -45,16 +64,32 @@ export default function LoginView() {
       <Section>
         <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
           <label style={styles.label}>
-            Почта
-            <input type="email" name="email" value={email} onChange={handleChange} />
+            Email
+            <input
+              style={styles.input}
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              required
+            />
           </label>
 
           <label style={styles.label}>
-            Пароль
-            <input type="password" name="password" value={password} onChange={handleChange} />
+            Password
+            <input
+              style={styles.input}
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              required
+            />
           </label>
 
-          <button type="submit">Войти</button>
+          <button style={styles.button} type="submit">
+            LOGIN
+          </button>
         </form>
       </Section>
     </>

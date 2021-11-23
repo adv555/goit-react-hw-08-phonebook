@@ -1,0 +1,15 @@
+.navLink {
+  padding: 20px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  // color: #c5d8dd;
+  color: #546e7a;
+  cursor: pointer;
+}
+
+.activeLink,
+.navLink:hover {
+  // color: #f7e852;
+  color: #ff9800;
+}

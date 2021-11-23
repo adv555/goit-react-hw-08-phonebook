@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
+import background from 'images/bg.png';
+import MouseMoveSection from 'components/MouseMoveSection';
 
 import s from 'components/Hero/Hero.module.scss';
 function Hero({ title, children }) {
   return (
-    <section className={s.AppHeader}>
-      <div className="container">
-        <h1>{title}</h1>
+    <section className={s.AppHeader} style={{ backgroundImage: `url(${background})` }}>
+      <MouseMoveSection>
+        <h1 style={{ color: 'c5d8dd' }}>{title}</h1>
         {children}
-      </div>
+      </MouseMoveSection>
     </section>
   );
 }

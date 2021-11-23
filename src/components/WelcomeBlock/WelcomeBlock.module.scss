@@ -1,0 +1,91 @@
+body {
+  background-color: #263238;
+}
+.wrapper {
+  //   color: var(--text-color-2);
+  font-size: 25px;
+  width: fit-content;
+  font-style: italic;
+  text-align: center;
+  padding: 0 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.welcome {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.2;
+}
+
+.header {
+  margin: 0;
+  margin-left: 15px;
+  font-style: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #c5d8dd;
+}
+
+.header span {
+  color: #f7e852;
+  border-bottom: 2px solid #f7e852;
+  border-radius: 20px;
+  transition: border-radius 0.2s ease-in;
+}
+
+.header:hover span {
+  border-radius: 28px;
+}
+
+.about {
+  font-size: 16px;
+}
+
+.button {
+  margin: 0 20px;
+  font-style: normal;
+  border-bottom: 1px solid #f7e852;
+}
+
+.bookLogo {
+  margin-top: -30px;
+}
+
+@media screen and (max-width: 960px) {
+  .bookLogo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .bookLogo {
+    display: none;
+  }
+}

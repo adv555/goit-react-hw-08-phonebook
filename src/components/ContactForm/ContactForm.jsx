@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
 import s from 'components/ContactForm/ContactForm.module.scss';
 import { addContact } from 'redux/contacts/operations';
-import { isLoading } from 'redux/contacts/selectors';
+import { isLoading, getContacts } from 'redux/contacts/selectors';
 
 export default function Form() {
   const dispatch = useDispatch();
   const loader = useSelector(isLoading);
+
+  const contacts = useSelector(getContacts);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -29,6 +31,9 @@ export default function Form() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (contacts.some(contact => contact.name === name)) {
+      return alert(' is already in the contacts');
+    }
 
     dispatch(addContact({ name, number }));
     reset();
@@ -83,11 +88,3 @@ export default function Form() {
     )
   );
 }
-
-// With import { connect } from 'react-redux';
-
-/** const mapDispatchToProps = dispatch => ({
-  onSubmit: (name, number) => dispatch(addContact(name, number)),
-});
-
-export default connect(null, mapDispatchToProps)(Form); */

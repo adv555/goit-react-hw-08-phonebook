@@ -42,23 +42,3 @@ export default function ContactList() {
     )
   );
 }
-
-// With import { connect } from 'react-redux';
-
-/**
-  const getFilterContacts = (contacts, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-  return contacts.filter(({ name }) => name.toLowerCase().includes(normalizedFilter));
-};
-
-const mapStateToProps = ({ contacts: { items, filter } }) => ({
-  contacts: getFilterContacts(items, filter),
-});
-
-const mapDispatchToProps = dispatch => ({
-  onDeleteContact: id => dispatch(deleteContact(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
-
- */

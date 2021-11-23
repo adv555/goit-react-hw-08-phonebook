@@ -15,6 +15,7 @@ import {
 
 import contactsReducer from 'redux/contacts/reducer';
 import authReducer from 'redux/auth/reducer';
+import { members } from 'redux/santa/reducer';
 
 const middleware = getDefaultMiddleware => [
   ...getDefaultMiddleware({
@@ -25,13 +26,6 @@ const middleware = getDefaultMiddleware => [
   // logger,
 ];
 
-// const contactsPersistConfig = {
-//   key: ' Contacts List',
-//   storage,
-//   blacklist: ['filter'],
-//   // whitelist: ['token'],
-// };
-
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -41,8 +35,8 @@ const authPersistConfig = {
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    // contacts: persistReducer(contactsPersistConfig, contactsReducer),
     contacts: contactsReducer,
+    members,
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware,

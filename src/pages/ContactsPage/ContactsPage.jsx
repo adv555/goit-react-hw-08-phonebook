@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import Hero from 'components/Hero';
 import Section from 'components/Section';
@@ -9,6 +10,12 @@ import { isLoading } from 'redux/contacts/selectors';
 
 const ContactsPage = () => {
   const loader = useSelector(isLoading);
+  useEffect(() => {
+    document.body.style.backgroundColor = '#EDF2F0';
+    return () => {
+      document.body.style.backgroundColor = '#263238';
+    };
+  }, []);
   return (
     <>
       <Hero title={'PhoneBook'}>

@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $text-color-2;
+  border-bottom: 1px solid $border-color;
   //   font-size: 14px;
   background-color: $bg-color;
 
@@ -43,10 +43,15 @@
     margin-right: 15px;
   }
 }
+
 .logOutBtn {
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px 10px;
+  &:hover {
+    border-color: yellow;
+    color: yellow;
+  }
 }
 .profileName {
   display: flex;

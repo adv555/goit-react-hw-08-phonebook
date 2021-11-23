@@ -1,0 +1,51 @@
+.box {
+  display: flex;
+  margin: 0;
+  margin-left: 15px;
+  font-style: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  // color: #c5d8dd;
+  color: #455a64;
+}
+.box .span {
+  display: flex;
+  padding-bottom: 20px;
+  color: #f7e852;
+  border-bottom: 3px solid #ff9800;
+  border-radius: 18px;
+  transition: border-radius 0.2s ease-in;
+}
+.box:hover span {
+  border-radius: 28px;
+}
+.box .eye {
+  position: relative;
+  width: 35px;
+  height: 40px;
+  display: block;
+  background: #fff;
+  // background: transparent;
+  margin: -5px 3px;
+
+  border-radius: 50%;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #f7e852, inset 0 0 15px #f7e852;
+  //   color: #f7e852;
+  //   border-bottom: 2px solid #f7e852;
+  //   border-radius: 20px;
+  //   transition: border-radius 0.2s ease-in;
+}
+
+.box .eye::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #f7e852;
+  box-sizing: border-box;
+}
