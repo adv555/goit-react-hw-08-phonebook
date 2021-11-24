@@ -2,10 +2,12 @@ import { createReducer } from '@reduxjs/toolkit';
 import { addMember, deleteMember } from 'redux/santa/actions';
 
 const initialState = [
-  { id: 1, name: 'Klause', email: 'email@mail.ru', present: 'gift' },
-  { id: 2, name: 'Klause12', email: 'email2@mail.ru', present: 'gift2' },
-  { id: 3, name: 'Klause3', email: 'email3@mail.ru', present: 'gift3' },
-  { id: 4, name: 'Klause4', email: 'email4@mail.ru', present: 'gift4' },
+  { id: 1, name: 'Klause', email: 'email@mail.com', present: 'gift-1' },
+  { id: 2, name: 'Simone', email: 'email2@mail.com', present: 'gift-2' },
+  { id: 3, name: 'Jane', email: 'email3@mail.com', present: 'gift-3' },
+  { id: 4, name: 'Oliver', email: 'email4@mail.com', present: 'gift-4' },
+  { id: 5, name: 'Charlotte', email: 'email5@mail.com', present: 'gift-5' },
+  { id: 6, name: 'James', email: 'email6@mail.com', present: 'gift-6' },
 ];
 
 export const members = createReducer(initialState, {
