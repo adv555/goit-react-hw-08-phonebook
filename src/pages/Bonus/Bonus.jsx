@@ -1,17 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMember } from 'redux/santa/actions';
 import { getMembers } from 'redux/santa/selectors';
 import shortid from 'shortid';
 import MemberList from 'components/Bonus/MemberList/MemberList';
 import Section from 'components/Section';
+import Hero from 'components/Hero';
+import s from 'pages/Bonus/Bonus.module.scss';
 
 const ChristmasSanta = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [present, setPresent] = useState('');
-  const dispatch = useDispatch();
   const members = useSelector(getMembers);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = '#EDF2F0';
+    return () => {
+      document.body.style.backgroundColor = '#263238';
+    };
+  }, []);
 
   const onChange = ({ target: { name, value } }) => {
     // console.log(name);
@@ -52,30 +62,38 @@ const ChristmasSanta = () => {
   };
 
   return (
-    <Section>
-      <form action="" onSubmit={onSubmit}>
-        <label htmlFor="">Name:</label>
-        <br />
-        <input type="text" name="name" value={name} onChange={onChange} />
-        <br />
-        <label htmlFor="">Email:</label>
-        <br />
-        <input type="email" name="email" value={email} onChange={onChange} />
-        <br />
-        <label htmlFor="">Present:</label>
-        <br />
-        <input type="text" name="present" value={present} onChange={onChange} />
-        <br />
+    <>
+      <Hero title={'Secret Santa'} />
+      <Section>
+        <div syle={{ margin: '0 auto' }}>
+          <form className={s.Form} action="" onSubmit={onSubmit}>
+            <div className={s.Group}>
+              <label htmlFor="">Name:</label>
 
-        <button type="submit">Get present</button>
-      </form>
-      <MemberList />
-      {members.length % 2 === 0 && (
-        <button type="button" onClick={getRandomList}>
-          Lotery
-        </button>
-      )}
-    </Section>
+              <input type="text" name="name" value={name} onChange={onChange} required />
+
+              <label htmlFor="">Email:</label>
+
+              <input type="email" name="email" value={email} onChange={onChange} required />
+
+              <label htmlFor="">Gift:</label>
+
+              <input type="text" name="present" value={present} onChange={onChange} />
+
+              <button className={s.Btn} type="submit">
+                Get present
+              </button>
+            </div>
+          </form>
+          <MemberList />
+          {members.length % 2 === 0 && (
+            <button className={s.Btn} type="button" onClick={getRandomList}>
+              SHUFFLE
+            </button>
+          )}
+        </div>
+      </Section>
+    </>
   );
 };
 export default ChristmasSanta;

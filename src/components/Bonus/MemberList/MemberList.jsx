@@ -1,8 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getMembers } from 'redux/santa/selectors';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import { ImBin } from 'react-icons/im';
 import { deleteMember } from 'redux/santa/actions';
 import Section from 'components/Section/Section';
+import s from './MemberList.module.scss';
 
 const MemberList = () => {
   const members = useSelector(getMembers);
@@ -10,20 +12,30 @@ const MemberList = () => {
   const dispatch = useDispatch();
 
   return (
-    <Section>
-      <ul>
-        {members.map(member => (
-          <li key={member.id}>
-            <p>{member.name}</p>
-            <p>{member.email}</p>
-            <p>{member.present}</p>
-            <button type="button" onClick={() => dispatch(deleteMember(member.id))}>
-              delete
-            </button>
-          </li>
-        ))}
-      </ul>
-    </Section>
+    members && (
+      <Section>
+        <table className={s.contactList}>
+          <tbody>
+            {members.map(member => (
+              <tr key={member.id}>
+                <td className={s.name}>{member.name}</td>
+                <td className={s.number}>{member.email}</td>
+                <td className={s.present}>{member.present}</td>
+                <td className={s.contactBtn}>
+                  <button
+                    className={s.btn}
+                    type="button"
+                    onClick={() => dispatch(deleteMember(member.id))}
+                  >
+                    <ImBin />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Section>
+    )
   );
 };
 
