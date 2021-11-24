@@ -15,7 +15,6 @@ const ChristmasSanta = () => {
   const [present, setPresent] = useState('');
   const members = useSelector(getMembers);
   const [recipients, setRecipients] = useState([]);
-  console.log(recipients);
 
   const dispatch = useDispatch();
 
@@ -27,8 +26,6 @@ const ChristmasSanta = () => {
   }, []);
 
   const onChange = ({ target: { name, value } }) => {
-    // console.log(name);
-    // console.log(value);
     switch (name) {
       case 'name':
         return setName(value);
@@ -44,7 +41,7 @@ const ChristmasSanta = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    // console.log(e);
+
     if (members.some(member => member.email === email)) {
       return alert('Member already exist');
     }
@@ -62,7 +59,7 @@ const ChristmasSanta = () => {
     // console.log(arrOne);
     // console.log(arrTwo);
     const recipients = [...members].sort(() => Math.floor(Math.random() - 0.5));
-    console.log(recipients);
+
     recipients !== members ? setRecipients(recipients) : getRandomList();
   };
 

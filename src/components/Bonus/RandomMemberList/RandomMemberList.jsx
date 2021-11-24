@@ -12,8 +12,6 @@ import Section from 'components/Section/Section';
 
 const SantasList = ({ randomMembers }) => {
   const members = useSelector(getMembers);
-  console.log(members);
-  console.log(randomMembers);
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {

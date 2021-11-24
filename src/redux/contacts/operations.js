@@ -7,7 +7,7 @@ const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
   fetchContacts.pending();
   try {
     const { data } = await axios.get('/contacts');
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);

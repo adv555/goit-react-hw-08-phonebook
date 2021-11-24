@@ -48,11 +48,10 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
   if (persistedToken === null) {
     // console.log('токена нет');
     return thunkAPI.rejectWithValue(5);
-    // return state;
   }
   try {
     const { data } = await axios.get('/users/current');
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
