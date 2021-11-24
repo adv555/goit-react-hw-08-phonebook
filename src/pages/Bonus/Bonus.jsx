@@ -6,6 +6,7 @@ import shortid from 'shortid';
 import MemberList from 'components/Bonus/MemberList/MemberList';
 import Section from 'components/Section';
 import Hero from 'components/Hero';
+import RandomMemberList from 'components/Bonus/RandomMemberList';
 import s from 'pages/Bonus/Bonus.module.scss';
 
 const ChristmasSanta = () => {
@@ -13,6 +14,8 @@ const ChristmasSanta = () => {
   const [email, setEmail] = useState('');
   const [present, setPresent] = useState('');
   const members = useSelector(getMembers);
+  const [recipients, setRecipients] = useState([]);
+  console.log(recipients);
 
   const dispatch = useDispatch();
 
@@ -53,12 +56,14 @@ const ChristmasSanta = () => {
   };
 
   const getRandomList = () => {
-    let halfArr = members.length / 2;
-    // console.log(halfArr);
-    const arrOne = members.slice(0, halfArr);
-    const arrTwo = members.slice(halfArr, members.length);
-    console.log(arrOne);
-    console.log(arrTwo);
+    // let halfArr = members.length / 2;
+    // const arrOne = members.slice(0, halfArr);
+    // const arrTwo = members.slice(halfArr, members.length);
+    // console.log(arrOne);
+    // console.log(arrTwo);
+    const recipients = [...members].sort(() => Math.floor(Math.random() - 0.5));
+    console.log(recipients);
+    recipients !== members ? setRecipients(recipients) : getRandomList();
   };
 
   return (
@@ -93,6 +98,7 @@ const ChristmasSanta = () => {
           )}
         </div>
       </Section>
+      <RandomMemberList randomMembers={recipients} />
     </>
   );
 };

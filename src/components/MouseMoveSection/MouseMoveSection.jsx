@@ -8,9 +8,9 @@ const MouseMoveSection = ({ children }) => {
     setMousePosition({ left: e.pageX, top: e.pageY });
     let evtX = e.pageX;
     let evtY = e.pageY;
-    console.log(mousePosition);
-    console.log(evtX);
-    console.log(evtY);
+    // console.log(mousePosition);
+    // console.log(evtX);
+    // console.log(evtY);
 
     return { evtX, evtY };
   };

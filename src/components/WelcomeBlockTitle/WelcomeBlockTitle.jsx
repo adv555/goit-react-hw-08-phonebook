@@ -18,7 +18,7 @@ const WelcomeBlockTitle = () => {
     let y = eyeEl.current.getBoundingClientRect().top + eyeEl.current.clientHeight / 2;
     let radian = Math.atan2(e.pageX - x, e.pageY - y);
     let rotation = radian * (180 / Math.PI) * -1 + 270;
-    console.log(rotation);
+    // console.log(rotation);
     setStyles({
       eye: { transform: `rotate(${rotation}deg)` },
     });

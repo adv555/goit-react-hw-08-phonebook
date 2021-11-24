@@ -8,7 +8,7 @@ import s from './MemberList.module.scss';
 
 const MemberList = () => {
   const members = useSelector(getMembers);
-  console.log(members);
+  // console.log(members);
   const dispatch = useDispatch();
 
   return (
