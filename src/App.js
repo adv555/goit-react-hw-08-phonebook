@@ -6,7 +6,7 @@ import 'styles/shared.scss';
 
 import AppBar from 'components/AppBar';
 import { fetchCurrentUser } from 'redux/auth/operations';
-import { getIsFetchingCurrent, getToken } from 'redux/auth/selectors';
+import { getIsFetchingCurrent, getUserName } from 'redux/auth/selectors';
 
 import PrivateRoute from 'components/PrivatRoute';
 import PublicRoute from 'components/PublicRoute';
@@ -25,7 +25,7 @@ const BonusPage = lazy(() => import('pages/Bonus' /* webpackChunkName: "bonus-pa
 const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(getIsFetchingCurrent);
-  const authUser = useSelector(getToken);
+  const authUser = useSelector(getUserName);
 
   useEffect(() => {
     if (authUser === null) {
