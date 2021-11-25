@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getMembers } from 'redux/santa/selectors';
-// import { useDispatch } from 'react-redux';
 import { ImBin } from 'react-icons/im';
 import { deleteMember } from 'redux/santa/actions';
 import Section from 'components/Section/Section';
@@ -8,7 +7,6 @@ import s from './MemberList.module.scss';
 
 const MemberList = () => {
   const members = useSelector(getMembers);
-  // console.log(members);
   const dispatch = useDispatch();
 
   return (

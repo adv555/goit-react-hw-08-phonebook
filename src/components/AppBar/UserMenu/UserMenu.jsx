@@ -5,7 +5,7 @@ import { logOut } from 'redux/auth/operations';
 
 const UserMenu = () => {
   const name = useSelector(getUserName);
-  console.log(name);
+
   const dispatch = useDispatch();
   return (
     <div className="navBox">
