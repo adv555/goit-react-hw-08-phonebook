@@ -6,7 +6,7 @@ import 'styles/shared.scss';
 
 import AppBar from 'components/AppBar';
 import { fetchCurrentUser } from 'redux/auth/operations';
-import { getIsFetchingCurrent } from 'redux/auth/selectors';
+// import { getIsFetchingCurrent } from 'redux/auth/selectors';
 
 import PrivateRoute from 'components/PrivatRoute';
 import PublicRoute from 'components/PublicRoute';
@@ -24,7 +24,7 @@ const BonusPage = lazy(() => import('pages/Bonus' /* webpackChunkName: "bonus-pa
 
 const App = () => {
   const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(getIsFetchingCurrent);
+  // const isFetchingCurrentUser = useSelector(getIsFetchingCurrent);
   // console.log(isFetchingCurrentUser);
 
   useEffect(() => {
@@ -32,56 +32,54 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    !isFetchingCurrentUser && (
-      <>
-        <AppBar />
-        <Suspense fallback={<p>Loading ...</p>}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PublicRoute restricted redirectTo="/contacts">
-                  <HomePage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/present"
-              element={
-                <PrivateRoute redirectTo="/login">
-                  <BonusPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute redirectTo="/login">
-                  <ContactsPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <PublicRoute restricted>
-                  <RegisterPage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <PublicRoute restricted>
-                  <LoginPage />
-                </PublicRoute>
-              }
-            />
-            <Route element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </>
-    )
+    <>
+      <AppBar />
+      <Suspense fallback={<p>Loading ...</p>}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PublicRoute restricted redirectTo="/contacts">
+                <HomePage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/present"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <BonusPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 
