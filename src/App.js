@@ -28,9 +28,9 @@ const App = () => {
   const authUser = useSelector(getUserName);
 
   useEffect(() => {
-    if (authUser === null) {
-      return;
-    }
+    // if (authUser === null) {
+    //   return;
+    // }
     dispatch(fetchCurrentUser());
   }, [authUser, dispatch]);
 
