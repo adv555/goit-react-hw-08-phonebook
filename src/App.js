@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
+
 import 'styles/shared.scss';
 
 import AppBar from 'components/AppBar';
@@ -10,12 +11,16 @@ import { getIsFetchingCurrent } from 'redux/auth/selectors';
 import PrivateRoute from 'components/PrivatRoute';
 import PublicRoute from 'components/PublicRoute';
 
-const HomePage = lazy(() => import('pages/HomePage'));
-const ContactsPage = lazy(() => import('pages/ContactsPage'));
-const LoginPage = lazy(() => import('pages/LoginPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
-const BonusPage = lazy(() => import('pages/Bonus'));
+const HomePage = lazy(() => import('pages/HomePage' /* webpackChunkName: "home-page"  */));
+const ContactsPage = lazy(() =>
+  import('pages/ContactsPage' /* webpackChunkName: "contacts-page"  */),
+);
+const LoginPage = lazy(() => import('pages/LoginPage' /* webpackChunkName: "login-page"  */));
+const RegisterPage = lazy(() =>
+  import('pages/RegisterPage' /* webpackChunkName: "register-page"  */),
+);
+const NotFoundPage = lazy(() => import('pages/NotFoundPage' /* webpackChunkName: "404-page"  */));
+const BonusPage = lazy(() => import('pages/Bonus' /* webpackChunkName: "bonus-page"  */));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,7 +35,7 @@ const App = () => {
     !isFetchingCurrentUser && (
       <>
         <AppBar />
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<p>Loading ...</p>}>
           <Routes>
             <Route
               path="/"
