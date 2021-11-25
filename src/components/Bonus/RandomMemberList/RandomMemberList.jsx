@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 
 import { getMembers } from 'redux/santa/selectors';
 import Section from 'components/Section/Section';
+import scrollContent from 'utils/scroll';
 
 const SantasList = ({ randomMembers }) => {
   const members = useSelector(getMembers);
@@ -32,7 +33,7 @@ const SantasList = ({ randomMembers }) => {
       border: 0,
     },
   }));
-
+  scrollContent();
   return (
     randomMembers.length === members.length && (
       <Section title={"Santa's List"}>

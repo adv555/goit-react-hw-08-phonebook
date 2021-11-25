@@ -1,6 +1,6 @@
 const scrollContent = () => {
   window.scrollTo({
-    top: document.documentElement.scrollHeight,
+    top: 500,
     behavior: 'smooth',
   });
 };

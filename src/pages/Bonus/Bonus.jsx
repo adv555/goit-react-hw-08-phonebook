@@ -58,6 +58,7 @@ const ChristmasSanta = () => {
     // const arrTwo = members.slice(halfArr, members.length);
     // console.log(arrOne);
     // console.log(arrTwo);
+
     const recipients = [...members].sort(() => Math.floor(Math.random() - 0.5));
 
     recipients !== members ? setRecipients(recipients) : getRandomList();

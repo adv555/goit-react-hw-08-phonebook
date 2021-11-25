@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getMembers } from 'redux/santa/selectors';
 import { ImBin } from 'react-icons/im';
 import { deleteMember } from 'redux/santa/actions';
-import Section from 'components/Section/Section';
+// import Section from 'components/Section/Section';
 import s from './MemberList.module.scss';
 
 const MemberList = () => {
@@ -11,7 +11,7 @@ const MemberList = () => {
 
   return (
     members && (
-      <Section>
+      <div style={{ padding: '10px 0' }}>
         <table className={s.contactList}>
           <tbody>
             {members.map(member => (
@@ -32,7 +32,7 @@ const MemberList = () => {
             ))}
           </tbody>
         </table>
-      </Section>
+      </div>
     )
   );
 };
