@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import Loader from 'react-loader-spinner';
+import Loader from 'components/Loader/Loader';
 import Hero from 'components/Hero';
 import Section from 'components/Section';
 import Form from 'components/ContactForm';
@@ -21,11 +21,7 @@ const ContactsPage = () => {
       <Hero title={'PhoneBook'}>
         <Filter />
       </Hero>
-      {loader && (
-        <Section>
-          <Loader type="Oval" color="black" height={'50vh'} width={80} />
-        </Section>
-      )}
+      {loader && <Loader color={'black'} />}
       <Section title={'Contacts'}>
         <Form />
         <ContactList />

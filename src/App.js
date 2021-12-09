@@ -5,6 +5,7 @@ import { useEffect, Suspense, lazy } from 'react';
 import 'styles/shared.scss';
 
 import AppBar from 'components/AppBar';
+import Loader from 'components/Loader/Loader';
 import { fetchCurrentUser } from 'redux/auth/operations';
 import { getIsFetchingCurrent } from 'redux/auth/selectors';
 
@@ -34,7 +35,7 @@ const App = () => {
     !isFetchingCurrentUser && (
       <>
         <AppBar />
-        <Suspense fallback={<p>Loading ...</p>}>
+        <Suspense fallback={<Loader color={'yellow'} />}>
           <Routes>
             <Route
               path="/"
