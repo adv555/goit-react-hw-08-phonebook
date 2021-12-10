@@ -1,6 +1,7 @@
 import Hero from 'components/Hero';
 import { useEffect } from 'react';
 import WelcomeBlock from 'components/WelcomeBlock';
+
 // import background from 'images/bg.png';
 
 const HomePage = () => {

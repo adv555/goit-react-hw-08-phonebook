@@ -1,35 +1,24 @@
-import { useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { useState, useRef, useEffect } from 'react';
+import { getRotation } from 'redux/mouse/selectors';
+// import MouseMoveSection from 'components/MouseMoveSection/MouseMoveSection';
 import s from 'components/WelcomeBlockTitle/WelcomeBlockTitle.module.scss';
 
 const WelcomeBlockTitle = () => {
-  const [mousePosition, setMousePosition] = useState({ left: 0, top: 0 });
   const [styles, setStyles] = useState({});
   const eyeEl = useRef(null);
 
-  // console.log(mousePosition);
-  // console.log(styles);
+  const rotation = useSelector(getRotation);
 
-  const handleMouseMove = e => {
-    // console.log(eyeEl);
-    // console.log(eyeEl.current.getBoundingClientRect());
-    setMousePosition({ left: e.pageX, top: e.pageY });
-
-    let x = eyeEl.current.getBoundingClientRect().left + eyeEl.current.clientWidth / 2;
-    let y = eyeEl.current.getBoundingClientRect().top + eyeEl.current.clientHeight / 2;
-    let radian = Math.atan2(e.pageX - x, e.pageY - y);
-    let rotation = radian * (180 / Math.PI) * -1 + 270;
-    // console.log(rotation);
+  useEffect(() => {
     setStyles({
       eye: { transform: `rotate(${rotation}deg)` },
     });
-  };
+  }, [rotation]);
 
   return (
-    <h1
-      className={s.box}
-      onMouseMove={e => handleMouseMove(e)}
-      style={{ left: mousePosition.left, top: mousePosition.top }}
-    >
+    // <MouseMoveSection>
+    <h1 className={s.box}>
       Phoneb
       <span className={s.span}>
         <span className={s.eye} ref={eyeEl} style={styles.eye}></span>
@@ -37,6 +26,7 @@ const WelcomeBlockTitle = () => {
       </span>
       k
     </h1>
+    // </MouseMoveSection>
   );
 };
 export default WelcomeBlockTitle;

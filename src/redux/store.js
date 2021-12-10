@@ -16,6 +16,7 @@ import {
 import contactsReducer from 'redux/contacts/reducer';
 import authReducer from 'redux/auth/reducer';
 import { members } from 'redux/santa/reducer';
+import { eyesRotation } from './mouse/reducer';
 
 const middleware = getDefaultMiddleware => [
   ...getDefaultMiddleware({
@@ -37,6 +38,7 @@ const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
     members,
+    eyesRotation,
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware,
