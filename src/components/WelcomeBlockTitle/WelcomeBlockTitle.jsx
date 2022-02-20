@@ -21,8 +21,12 @@ const WelcomeBlockTitle = () => {
     <h1 className={s.box}>
       Phoneb
       <span className={s.span}>
-        <span className={s.eye} ref={eyeEl} style={styles.eye}></span>
-        <span className={s.eye} ref={eyeEl} style={styles.eye}></span>
+        <span className={s.eye} ref={eyeEl} style={styles.eye}>
+          o
+        </span>
+        <span className={s.eye} ref={eyeEl} style={styles.eye}>
+          o
+        </span>
       </span>
       k
     </h1>
